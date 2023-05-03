@@ -10,7 +10,7 @@ class Player extends React.Component {
     componentDidMount() {
         // props like the source, or the sourcedesciption as a whole can be passed through
         // the can then be used to be called on the player itself
-        const { source, onPlay } = this.props;
+        const { source, onLoadStart, onPlay } = this.props;
 
         if (this._el.current) {
             this._player = new THEOplayer.Player(this._el.current, {
@@ -21,6 +21,7 @@ class Player extends React.Component {
 
             this._player.source = source;
             this._player.addEventListener('play', onPlay);
+            this._player.addEventListener('loadstart', onLoadStart);
         }
     }
 

@@ -21,6 +21,9 @@ function App() {
             <div className={'PlayerDiv'}>
                 <Player
                     source={source}
+                    onLoadStart={() => {
+                        console.log('---TEST loadstart');
+                    }}
                     onPlay={() => {
                         console.log('The player has started playing.');
                     }}
