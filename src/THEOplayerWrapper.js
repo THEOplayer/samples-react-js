@@ -20,8 +20,11 @@ class Player extends React.Component {
             });
 
             this._player.source = source;
+            this._player.preload = 'auto';
             this._player.addEventListener('play', onPlay);
             this._player.addEventListener('loadstart', onLoadStart);
+            console.log('---TEST preload', this._player.preload);
+            return this._player.preload;
         }
     }
 
