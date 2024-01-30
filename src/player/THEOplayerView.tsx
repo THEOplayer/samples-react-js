@@ -18,7 +18,9 @@ export function THEOplayerView({ onPlayer, license }: Props) {
                 console.log('THEOplayerView, creating THEOplayer');
                 const config = {
                     license,
-                    libraryLocation: '/node_modules/theoplayer/',
+                    // Note: THEOplayer loads workers for transmuxing and other tasks
+                    // these workers need to be located on the same server (see npm run build)
+                    libraryLocation: `${process.env.PUBLIC_URL}/vendor/theoplayer`,
                     ui: {
                         fluid: true,
                     },

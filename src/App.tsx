@@ -12,6 +12,7 @@ function App() {
 
         player.muted = true;
         player.autoplay = true;
+        // MPEG-DASH Sample source
         player.source = {
             sources: [
                 {
@@ -20,6 +21,15 @@ function App() {
                 },
             ],
         };
+        // HLS Sample source
+        // player.source = {
+        //     sources: [
+        //         {
+        //             src: '//cdn.theoplayer.com/video/big_buck_bunny/big_buck_bunny.m3u8',
+        //             type: 'application/x-mpegurl',
+        //         },
+        //     ],
+        // };
     }, []);
 
     return (
