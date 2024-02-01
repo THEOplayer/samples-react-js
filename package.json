@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "copyfiles --flat node_modules/theoplayer/* public/vendor/theoplayer && react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run copy:theoplayer && react-scripts start",
+    "build": "npm run copy:theoplayer && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish": "copyfiles --flat node_modules/theoplayer/* public/vendor/theoplayer",
-    "format": "prettier --write ."
+    "publish": "npm run copy:theoplayer",
+    "format": "prettier --write .",
+    "copy:theoplayer": "copyfiles --flat node_modules/theoplayer/* public/vendor/theoplayer"
   },
   "eslintConfig": {
     "extends": [
