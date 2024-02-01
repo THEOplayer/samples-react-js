@@ -29,7 +29,7 @@ export function THEOplayerView({ onPlayer, license }: Props) {
                 setPlayer(new Player(node, config));
             }
         },
-        [license]
+        [license],
     );
 
     useEffect(() => {
