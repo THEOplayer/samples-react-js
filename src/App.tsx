@@ -35,6 +35,15 @@ setInterval(() => {
         // progress the player's currentTime while it's paused
         if (player.paused && player.seekable.length > 0) {
             player.currentTime = player.seekable.end(player.seekable.length - 1);
+            if (player.videoTracks.length > 0) {
+                // target a lower quality for the paused player
+                player.videoTracks[0].targetQuality = player.videoTracks[0].qualities[0]
+            }
+        } else {
+            // reset the target qualities
+            if (player.videoTracks.length > 0) {
+                player.videoTracks[0].targetQuality = undefined
+            }
         }
     }
 }, 500);
